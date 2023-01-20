@@ -28,8 +28,8 @@ with st.sidebar:
     Hisse_Temel=Hisse_Temel_Veriler()
     st.header('Hisse Arama')
     dropdown1 = st.selectbox('Hisse Adı',Hisse_Temel['Kod'])
-    dropdown2 = st.slider('Data Sayısı', 0, 5000, 100, 100)
-    dropdown3 = st.slider('Periyot', 0, 500, 30, 5)
+    dropdown2 = st.slider('Data Sayısı', 0, 5000, 500, 100)
+    dropdown3 = st.slider('Periyot', 0, 500, 50, 5)
 
 tv = TvDatafeed()
 data = tv.get_hist(symbol=dropdown1,exchange='BIST',interval=Interval.in_daily,n_bars=dropdown2)
